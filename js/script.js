@@ -28,10 +28,10 @@ addTodo.addEventListener('click', function(){
   buttonWrapper.appendChild(trashButton); //add trash button to button wrapper
   buttonWrapper.appendChild(checkButton); // add check button to button wrapper
 
-
   newTodo.appendChild(inputText); // ADDS THE USER INPUT AS TEXT INTO LI ELEMENT
   newTodo.appendChild(buttonWrapper);
   todoList.insertBefore(newTodo, todoList.firstChild); //ADDS LI to UL. New LI will be added at the top.
+  newTodo.classList.toggle('slide'); //triggers slide out navigation for new element. transition doesnt work but animation does.
 
   //CLEAR INPUT FIELD
   userInput.value = '';
