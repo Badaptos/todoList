@@ -13,7 +13,7 @@ addTodo.addEventListener('click', function(){
   checkIcon = document.createElement('i');
 
 //check for user input
-  if(userInput === ''){
+  if(userInput.value === ''){
     return false;
   }
 
