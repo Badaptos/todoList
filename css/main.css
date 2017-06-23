@@ -1,0 +1,178 @@
+/* RESET STYLING*/
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h5, h6{padding: 10px;}
+
+h1{font-size: 3.5em;}
+
+h2{font-size: 3em;}
+
+h3{font-size: 2.5em;}
+
+h4{font-size: 2em;}
+
+h5{font-size: 1.5em;}
+
+h6{font-size: 1em;}
+
+p{font-size: 1.6em;}
+
+/* END RESET*/
+
+/*COLOR PALLETE*/
+/*
+Main color: #CFD2CD;
+Light: #E5E6E4;
+disabled: #FBFBF2;
+actionButtons: #A6A2A2;
+Dark: #847577;
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+html{font-family: 'Roboto', sans-serif;}
+
+.container{
+  max-width: 1280px;
+  min-width: 315px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header{
+  color: #fff;
+  background-color: #CFD2CD;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 3px 10px -5px #000;
+  position: relative;
+  height: 80px;
+}
+
+header button{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 5;
+  background-color: #847577;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  color: #fff;
+}
+
+header input{
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px 25px 25px 5px;
+  height: 50px;
+  width: 90%;
+  font-size: 2em;
+  margin: 15px;
+  color: #333;
+  padding-left: 10px;
+  padding-right: 50px;
+}
+
+ header input:focus{
+  outline: none;
+}
+
+.todoWrapper{
+  background-color: #E5E6E4;
+  max-height: 100vh;
+  min-height: 86vh;
+
+}
+
+#todoList{
+  padding: 20px;
+  list-style: none;
+}
+
+#todoList li{
+  background-color: #fff;
+  box-shadow: 0 1.5px 5px -2.5px #000;
+  min-height: 50px;
+  font-size: 1.5em;
+  padding: 15px;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#todoList li .actionButtons{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 100px;
+}
+
+#todoList li .actionButtons button{
+  font-size: 2em;
+  position: relative;
+  border: none;
+  height: 50px;
+  width: 50px;
+  outline: none;
+  float: left;
+  background-color: #fff;
+}
+
+#todoList li .actionButtons button i{
+  padding: 10px;
+}
+
+#todoList li .actionButtons button:last-of-type{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#todoList li .actionButtons button:last-of-type:before{
+  content: '';
+  width: 1px;
+  height: 30px;
+  background-color: #E5E6E4;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.fa-trash{
+  color: #A6A2A2;
+}
+
+.fa-trash:active{
+  color: #E85656;
+}
+
+.fa-check{
+  color: #A6A2A2;
+}
+
+.fa-check:active{
+  color: #33BF93;
+}
+
+#completedTodos{
+  position: relative;
+}
+
+#completedTodos:before{
+  content: '';
+  height: 1px;
+  background-color: #847577;
+  position: absolute;
+  top: 0;
+  left: 100px;
+  right: 100px;
+}
