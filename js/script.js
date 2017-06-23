@@ -31,7 +31,9 @@ addTodo.addEventListener('click', function(){
   newTodo.appendChild(inputText); // ADDS THE USER INPUT AS TEXT INTO LI ELEMENT
   newTodo.appendChild(buttonWrapper);
   todoList.insertBefore(newTodo, todoList.firstChild); //ADDS LI to UL. New LI will be added at the top.
-  newTodo.classList.toggle('slide'); //triggers slide out navigation for new element. transition doesnt work but animation does.
+
+  //triggers slide out navigation for new element. transition doesnt work but animation does.
+  newTodo.classList.toggle('slide');
 
   //CLEAR INPUT FIELD
   userInput.value = '';
