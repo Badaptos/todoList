@@ -92,12 +92,12 @@ header input{
 
 }
 
-#todoList{
+ul{
   padding: 20px;
   list-style: none;
 }
 
-#todoList li{
+ul li{
   background-color: #fff;
   box-shadow: 0 1.5px 5px -2.5px #000;
   min-height: 50px;
@@ -109,7 +109,7 @@ header input{
   position: relative;
 }
 
-#todoList li .actionButtons{
+ul li .actionButtons{
   position: absolute;
   top: 0;
   right: 0;
@@ -117,7 +117,7 @@ header input{
   width: 100px;
 }
 
-#todoList li .actionButtons button{
+ul li .actionButtons button{
   font-size: 2em;
   position: relative;
   border: none;
@@ -128,16 +128,16 @@ header input{
   background-color: #fff;
 }
 
-#todoList li .actionButtons button i{
+ul li .actionButtons button i{
   padding: 10px;
 }
 
-#todoList li .actionButtons button:last-of-type{
+ul li .actionButtons button:last-of-type{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-#todoList li .actionButtons button:last-of-type:before{
+ul li .actionButtons button:last-of-type:before{
   content: '';
   width: 1px;
   height: 30px;
