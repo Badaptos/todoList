@@ -1,6 +1,8 @@
 //ADD A NEW ITEM
-document.querySelector('.todoButton').addEventListener('click', function(){
-  var todoList = document.querySelector('#todoList'),
+document.querySelector('.todoButton').addEventListener('click', createTodo);
+
+function createTodo(){
+  var todoList = document.querySelector('#todoList'), //CONTAINER ELEMENT
   userInput = document.querySelector('#todoValue'), // MOVED .VALUE METHOD FROM USERINPUT VARIABLE AND JUST USE IT WHERE VALUE IS NEEDED. THIS ALLOWS FOR RESETTING INPUT VALUE
 
   //CREATE ELEMENTS
@@ -25,10 +27,17 @@ document.querySelector('.todoButton').addEventListener('click', function(){
   checkButton.className = 'completed';
 
 //Append Elements
-  checkButton.appendChild(checkIcon); //add checkmark icon to button
-  trashButton.appendChild(trashIcon); //add tash icon to button
+
+  trashButton.appendChild(trashIcon); //add trash icon to button
   buttonWrapper.appendChild(trashButton); //add trash button to button wrapper
+
+  trashButton.addEventListener('click', deleteTodo); //ADDS EVENT LISTENER TO DELETE BUTTON
+
+
+  checkButton.appendChild(checkIcon); //add checkmark icon to button
   buttonWrapper.appendChild(checkButton); // add check button to button wrapper
+  checkButton.addEventListener('click', completeTodo); //ADDS THE EVENT LISTENER FOR THE COMPLETED BUTTON
+
   newTodo.appendChild(inputText); // ADDS THE USER INPUT AS TEXT INTO LI ELEMENT
   newTodo.appendChild(buttonWrapper);
   todoList.insertBefore(newTodo, todoList.firstChild); //ADDS LI to UL. New LI will be added at the top.
@@ -39,14 +48,28 @@ document.querySelector('.todoButton').addEventListener('click', function(){
   //CLEAR INPUT FIELD
   userInput.value = '';
 
-  // PUT EACH LI ELEMENT INTO AN ARRAY
-  arr.unshift(newTodo);
-});
+  todos.unshift(newTodo);
+}//END CREATE TODO FUNCTION
 
-var arr = [];
 
-if(document.querySelector('button .delete')){
-  document.querySelector('button .delete').addEventListener('click', function(){
-    console.log('working');
-  });
+
+
+var todos = [];
+
+var completedTodos = document.querySelector('#completedTodos'); //CREATE VAR FOR COMPELTED TODOS ELEMENT
+completedTodos.style.display = 'none'; //SET
+function completeTodo(){
+  console.log('success');
+  if(completedTodos.style.display = 'block'){
+    return true;
+  }
+  completedTodos.style.display = 'block';
 }
+
+function deleteTodo(){
+  var item = this.parentNode.parentNode; //USING PARENT NODE TO SCALE UP THE DOM TREE TO GET THE LI
+  var parent = item.parentNode; //SCALING UP ONCE THE DOM TREE FROM ITEM TO GET THE UL
+  parent.removeChild(item); //REMOVES THE CHILD OF PARENT NODE (UL) WHICH IS THE ITEM (LI)
+}
+//if delete button is pressed
+//list item will be deleted
