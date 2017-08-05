@@ -36,7 +36,7 @@ Dark: #847577;
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 html{font-family: 'Roboto', sans-serif;}
-body{background-color: #E5E6E4;}
+body{background-color: #ECF0F1;}
 
 .container{
   max-width: 1280px;
@@ -47,7 +47,7 @@ body{background-color: #E5E6E4;}
 
 header{
   color: #fff;
-  background-color: #CFD2CD;
+  background-color: #2C3E50;
   border-radius: 0 0 5px 5px;
   box-shadow: 0 3px 10px -5px #000;
   position: relative;
@@ -59,7 +59,7 @@ header button{
   top: 15px;
   right: 15px;
   z-index: 5;
-  background-color: #847577;
+  background-color: #E74C3C;
   outline: none;
   border: none;
   border-radius: 50%;
