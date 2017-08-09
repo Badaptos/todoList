@@ -43,7 +43,7 @@ function createTodo(){
   todoList.insertBefore(newTodo, todoList.firstChild); //ADDS LI to UL. New LI will be added at the top.
 
   //triggers slide out navigation for new element. transition doesnt work but animation does.
-  newTodo.classList.toggle('slide');
+  newTodo.classList.add('slideOut');
 
   //CLEAR INPUT FIELD
   userInput.value = '';
@@ -53,23 +53,41 @@ function createTodo(){
 
 
 
-
-var todos = [];
-
 var completedTodos = document.querySelector('#completedTodos'); //CREATE VAR FOR COMPELTED TODOS ELEMENT
 completedTodos.style.display = 'none'; //SET
+
+
 function completeTodo(){
   console.log('success');
+  var completedItem = this.parentNode.parentNode;
+  var completedParent = completedItem.parentNode;
+  var itemContent = completedItem.innerHTML;
+  var completedList = document.getElementById('completedList');
+  var newItem = document.createElement('li');
+  completedList.insertBefore(newItem, completedList.firstChild);
+  newItem.innerHTML = itemContent;
+  completedParent.removeChild(completedItem);
+  document.querySelector('.delete').addEventListener('click', deleteTodo);
+
   if(completedTodos.style.display = 'block'){
     return true;
   }
   completedTodos.style.display = 'block';
 }
 
+
+
+
 function deleteTodo(){
   var item = this.parentNode.parentNode; //USING PARENT NODE TO SCALE UP THE DOM TREE TO GET THE LI
   var parent = item.parentNode; //SCALING UP ONCE THE DOM TREE FROM ITEM TO GET THE UL
   parent.removeChild(item); //REMOVES THE CHILD OF PARENT NODE (UL) WHICH IS THE ITEM (LI)
+
+  if(completedList.innerHTML = ' '){
+    completedTodos.style.display = 'none';
+  } else{
+    return false;
+  }
 }
 //if delete button is pressed
 //list item will be deleted

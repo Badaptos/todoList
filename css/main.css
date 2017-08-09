@@ -110,9 +110,19 @@ ul li{
   to{left: 0;}
 }
 
-.slide{
+@@keyframes slideIn {
+  from{left: 0}
+  to{left: -150%;}
+}
+
+.slideIn{
+  animation: slideIn 1s;
+  left: -150%;
+}
+
+.slideOut{
   animation: slideOut 1s;
-  left: 0;
+  /*left: 0;*/
 }
 
 
