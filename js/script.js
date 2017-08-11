@@ -48,7 +48,7 @@ function createTodo(){
   //CLEAR INPUT FIELD
   userInput.value = '';
 
-  todos.unshift(newTodo);
+  // todos.unshift(newTodo);
 }//END CREATE TODO FUNCTION
 
 
@@ -58,21 +58,23 @@ completedTodos.style.display = 'none'; //SET
 
 
 function completeTodo(){
-  console.log('success');
   var completedItem = this.parentNode.parentNode;
   var completedParent = completedItem.parentNode;
   var itemContent = completedItem.innerHTML;
   var completedList = document.getElementById('completedList');
   var newItem = document.createElement('li');
+
+
   completedList.insertBefore(newItem, completedList.firstChild);
   newItem.innerHTML = itemContent;
   completedParent.removeChild(completedItem);
-  document.querySelector('.delete').addEventListener('click', deleteTodo);
+  newItem.childNodes[1].childNodes[0].addEventListener('click', deleteTodo);
 
   if(completedTodos.style.display = 'block'){
     return true;
   }
   completedTodos.style.display = 'block';
+  console.log('success');
 }
 
 
@@ -83,7 +85,7 @@ function deleteTodo(){
   var parent = item.parentNode; //SCALING UP ONCE THE DOM TREE FROM ITEM TO GET THE UL
   parent.removeChild(item); //REMOVES THE CHILD OF PARENT NODE (UL) WHICH IS THE ITEM (LI)
 
-  if(completedList.innerHTML = ' '){
+  if(completedList.innerHTML === ''){
     completedTodos.style.display = 'none';
   } else{
     return false;
