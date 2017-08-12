@@ -4,8 +4,14 @@ document.querySelector('form').addEventListener('submit', function(e){
   e.preventDefault();
   createTodo();
 });
+// var todos = document.querySelector('.todoWrapper');
+var currentList = document.querySelector('#todos')
+var completedTodos = document.querySelector('#completedTodos'); //CREATE VAR FOR COMPELTED TODOS ELEMENT
+completedTodos.style.display = 'none'; //SET
+
 
 function createTodo(){
+  document.querySelector('.actionPrompt').style.display = 'none';
   var todoList = document.querySelector('#todoList'), //CONTAINER ELEMENT
   userInput = document.querySelector('#todoValue'), // MOVED .VALUE METHOD FROM USERINPUT VARIABLE AND JUST USE IT WHERE VALUE IS NEEDED. THIS ALLOWS FOR RESETTING INPUT VALUE
 
@@ -54,13 +60,6 @@ function createTodo(){
 
   // todos.unshift(newTodo);
 }//END CREATE TODO FUNCTION
-
-
-
-var completedTodos = document.querySelector('#completedTodos'); //CREATE VAR FOR COMPELTED TODOS ELEMENT
-completedTodos.style.display = 'none'; //SET
-
-
 function completeTodo(){
   var completedItem = this.parentNode.parentNode;
   var completedParent = completedItem.parentNode;
@@ -80,10 +79,6 @@ function completeTodo(){
   completedTodos.style.display = 'block';
   console.log('success');
 }
-
-
-
-
 function deleteTodo(){
   var item = this.parentNode.parentNode; //USING PARENT NODE TO SCALE UP THE DOM TREE TO GET THE LI
   var parent = item.parentNode; //SCALING UP ONCE THE DOM TREE FROM ITEM TO GET THE UL
@@ -93,6 +88,10 @@ function deleteTodo(){
     completedTodos.style.display = 'none';
   } else{
     return false;
+  }
+
+  if(parent.innerHTML === ''){
+    document.querySelector('.actionPrompt').style.display = 'block';
   }
 }
 //if delete button is pressed

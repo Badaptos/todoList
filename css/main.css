@@ -193,3 +193,10 @@ ul li .actionButtons button:last-of-type:before{
   left: 100px;
   right: 100px;
 }
+
+.actionPrompt{
+  color: #333;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 55%;
+}

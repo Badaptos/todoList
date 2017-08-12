@@ -12,10 +12,11 @@
 <body>
   <main class="container">
     <header>
-      <form action="post"><input type="text" id="todoValue" placeholder="REMIND.ME"></form>
+      <form action="post"><input type="text" id="todoValue" autofocus autocomplete="off"></form>
       <button class="todoButton"><i class="fa fa-plus" aria-hidden="true"></i></button>
     </header>
     <section class="todoWrapper">
+      <h2 class="actionPrompt">Enter a new item</h2>
       <section id="todos">
         <ul id="todoList"></ul>
       </section>
