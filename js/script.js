@@ -1,5 +1,9 @@
 //ADD A NEW ITEM
 document.querySelector('.todoButton').addEventListener('click', createTodo);
+document.querySelector('form').addEventListener('submit', function(e){
+  e.preventDefault();
+  createTodo();
+});
 
 function createTodo(){
   var todoList = document.querySelector('#todoList'), //CONTAINER ELEMENT
