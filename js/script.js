@@ -78,7 +78,9 @@ function completeTodo(){
   newItem.childNodes[1].childNodes[0].addEventListener('click', deleteTodo);
   newItem.childNodes[1].childNodes[1].childNodes[0].classList.add('complete');
 
-
+  //
+  // NEED TO FIGURE OUT HOW TO REMOVE ELEMENT AFTER ANIMATION OCCURS
+  //
 
   if(completedTodos.style.display = 'block'){
     return true;
