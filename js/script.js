@@ -60,6 +60,8 @@ function createTodo(){
 
   // todos.unshift(newTodo);
 }//END CREATE TODO FUNCTION
+
+
 function completeTodo(){
   var completedItem = this.parentNode.parentNode;
   var completedParent = completedItem.parentNode;
@@ -72,6 +74,8 @@ function completeTodo(){
   newItem.innerHTML = itemContent;
   completedParent.removeChild(completedItem);
   newItem.childNodes[1].childNodes[0].addEventListener('click', deleteTodo);
+  newItem.childNodes[1].childNodes[1].childNodes[0].classList.add('complete');
+
 
   if(completedTodos.style.display = 'block'){
     return true;
@@ -79,6 +83,7 @@ function completeTodo(){
   completedTodos.style.display = 'block';
   console.log('success');
 }
+
 function deleteTodo(){
   var item = this.parentNode.parentNode; //USING PARENT NODE TO SCALE UP THE DOM TREE TO GET THE LI
   var parent = item.parentNode; //SCALING UP ONCE THE DOM TREE FROM ITEM TO GET THE UL
@@ -90,7 +95,7 @@ function deleteTodo(){
     return false;
   }
 
-  if(parent.innerHTML === ''){
+  if(document.getElementById('todoList').innerHTML === '' && parent.innerHTML === ''){
     document.querySelector('.actionPrompt').style.display = 'block';
   }
 }

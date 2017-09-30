@@ -35,7 +35,7 @@ Dark: #847577;
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
-html{font-family: 'Roboto', sans-serif;}
+html{font-family: 'Roboto', sans-serif; letter-spacing: 2px;}
 body{background-color: #ECF0F1;}
 
 .container{
@@ -199,4 +199,8 @@ ul li .actionButtons button:last-of-type:before{
   opacity: 0.5;
   text-align: center;
   margin-top: 55%;
+}
+
+.complete{
+  color: #33BF93;
 }
