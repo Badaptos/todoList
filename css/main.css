@@ -110,7 +110,7 @@ ul li{
   to{left: 0;}
 }
 
-@@keyframes slideIn {
+@keyframes slideIn {
   from{left: 0}
   to{left: -150%;}
 }
@@ -122,7 +122,6 @@ ul li{
 
 .slideOut{
   animation: slideOut 1s;
-  /*left: 0;*/
 }
 
 

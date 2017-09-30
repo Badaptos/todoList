@@ -72,16 +72,18 @@ function completeTodo(){
 
   completedList.insertBefore(newItem, completedList.firstChild);
   newItem.innerHTML = itemContent;
-  completedParent.removeChild(completedItem);
+  completedItem.classList.add('slideIn');
+  completedItem.classList.remove('slideOut');
+  newItem.classList.add('slideOut');
   newItem.childNodes[1].childNodes[0].addEventListener('click', deleteTodo);
   newItem.childNodes[1].childNodes[1].childNodes[0].classList.add('complete');
+
 
 
   if(completedTodos.style.display = 'block'){
     return true;
   }
   completedTodos.style.display = 'block';
-  console.log('success');
 }
 
 function deleteTodo(){
