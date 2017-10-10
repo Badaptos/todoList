@@ -36,13 +36,14 @@ Dark: #847577;
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 html{font-family: 'Roboto', sans-serif; letter-spacing: 2px;}
-body{background-color: #ECF0F1;}
+body{background-color: #fff;}
 
 .container{
   max-width: 1280px;
   min-width: 315px;
   width: 100%;
   margin: 0 auto;
+  background-color: #ECF0F1;
 }
 
 header{
@@ -106,8 +107,8 @@ ul li{
 }
 
 @keyframes slideOut {
-  from{left: -150%}
-  to{left: 0;}
+  from{opacity: 0;}
+  to{opacity: 1;}
 }
 
 @keyframes slideIn {
@@ -121,7 +122,7 @@ ul li{
 }
 
 .slideOut{
-  animation: slideOut 1s;
+  animation: slideOut 2s;
 }
 
 
@@ -202,4 +203,56 @@ ul li .actionButtons button:last-of-type:before{
 
 .complete{
   color: #33BF93;
+}
+
+footer{
+  display: none;
+}
+
+
+@media screen and (min-width: 767px) {
+  .container{
+    max-width: 650px;
+    min-width: 360px;
+    box-shadow: 0 5px 9px -3px #000;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  header input{
+    margin-left: 30px;
+  }
+
+  .todoWrapper{
+    min-height: calc(100vh - 120px);
+  }
+
+  .actionPrompt{
+    padding-top: calc(50vh - 80px);
+    margin: 0;
+  }
+
+  .todoButton{
+    right: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .container{
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  .todoWrapper{
+    min-height: calc(100vh - 110px);
+  }
+
+  footer{
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 15px;
+    font-weight: 300;
+  }
 }
