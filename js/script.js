@@ -52,9 +52,6 @@ function createTodo(){
   newTodo.appendChild(buttonWrapper);
   todoList.insertBefore(newTodo, todoList.firstChild); //ADDS LI to UL. New LI will be added at the top.
 
-  //triggers slide out navigation for new element. transition doesnt work but animation does.
-  newTodo.classList.add('slideOut');
-
   //CLEAR INPUT FIELD
   userInput.value = '';
 
@@ -72,9 +69,6 @@ function completeTodo(){
 
   completedList.insertBefore(newItem, completedList.firstChild);
   newItem.innerHTML = itemContent;
-  completedItem.classList.add('slideIn');
-  completedItem.classList.remove('slideOut');
-  newItem.classList.add('slideOut');
   newItem.childNodes[1].childNodes[0].addEventListener('click', deleteTodo);
   newItem.childNodes[1].childNodes[1].childNodes[0].classList.add('complete');
 
