@@ -64,7 +64,7 @@ html {
 }
 
 body {
-    background-color: #fff;
+    background-color: #ECF0F1;
 }
 
 .container {
@@ -72,7 +72,6 @@ body {
     min-width: 315px;
     width: 100%;
     margin: 0 auto;
-    background-color: #ECF0F1;
 }
 
 header {
@@ -249,9 +248,14 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
+    body{
+        background-color: #fff;
+    }
+
     .container {
         margin-top: 15px;
         margin-bottom: 30px;
+        background-color: #ECF0F1;
     }
 
     .todoWrapper {
