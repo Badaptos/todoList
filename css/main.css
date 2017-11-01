@@ -133,6 +133,7 @@ ul li {
     border-radius: 5px;
     margin-bottom: 10px;
     position: relative;
+    overflow: hidden;
 }
 
 ul li .actionButtons {
@@ -248,7 +249,7 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
-    body{
+    body {
         background-color: #fff;
     }
 

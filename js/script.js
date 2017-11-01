@@ -54,8 +54,6 @@ function createTodo() {
 
     //CLEAR INPUT FIELD
     userInput.value = '';
-
-    // todos.unshift(newTodo);
 } //END CREATE TODO FUNCTION
 
 
